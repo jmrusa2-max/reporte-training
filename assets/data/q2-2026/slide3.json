@@ -1,0 +1,28 @@
+{
+  "labels": ["Q2 2025", "Q3 2025", "Q4 2025", "Q1 2026", "Q2 2026"],
+  "datasets": [{
+    "label": "Vendedores Capacitados",
+    "data": [463, 480, 329, 752, 662],
+    "backgroundColor": [
+      "rgba(75, 192, 192, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(75, 192, 192, 0.7)"
+    ],
+    "borderColor": [
+      "rgba(75, 192, 192, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(75, 192, 192, 1)"
+    ],
+    "borderWidth": 2
+  }],
+  "gallery_images": [
+    "assets/images/q2-2026/5.jpg",
+    "assets/images/q2-2026/6.jpg",
+    "assets/images/q2-2026/7.jpg",
+    "assets/images/q2-2026/8.jpg"
+  ]
+}

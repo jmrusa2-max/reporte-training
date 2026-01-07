@@ -1,0 +1,38 @@
+{
+  "labels": ["LOQ", "Tab Series", "Legion Tab", "Yoga Tab", "Idea Tab series", "Yoga", "Tab M Series", "Ideapad", "Legion", "L Series"],
+  "datasets": [{
+    "label": "Vendedores por Familia",
+    "data": [177, 157, 71, 68, 60, 42, 40, 26, 19, 2],
+    "backgroundColor": [
+      "rgba(128, 128, 128, 0.7)",
+      "rgba(75, 192, 192, 0.7)",
+      "rgba(0, 0, 0, 0.7)",
+      "rgba(255, 165, 0, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(255, 206, 86, 0.7)",
+      "rgba(75, 192, 192, 0.7)",
+      "rgba(201, 203, 207, 0.7)",
+      "rgba(255, 99, 132, 0.7)",
+      "rgba(153, 102, 255, 0.7)"
+    ],
+    "borderColor": [
+      "rgba(128, 128, 128, 1)",
+      "rgba(75, 192, 192, 1)",
+      "rgba(0, 0, 0, 1)",
+      "rgba(255, 165, 0, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(255, 206, 86, 1)",
+      "rgba(75, 192, 192, 1)",
+      "rgba(201, 203, 207, 1)",
+      "rgba(255, 99, 132, 1)",
+      "rgba(153, 102, 255, 1)"
+    ],
+    "borderWidth": 2
+  }],
+  "gallery_images": [
+    "assets/images/q3-2026/13.jpg",
+    "assets/images/q3-2026/14.jpg",
+    "assets/images/q3-2026/15.jpg",
+    "assets/images/q3-2026/16.jpg"
+  ]
+}
