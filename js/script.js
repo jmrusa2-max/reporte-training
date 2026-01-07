@@ -133,6 +133,15 @@ document.addEventListener('DOMContentLoaded', () => {
               setupModalForGallery();
             }
           }
+
+          // Update footnote text
+          const footnote = document.querySelector(`#slide${config.slide} .footnote`);
+          if (footnote && data.footnote) {
+            footnote.innerHTML = data.footnote;
+          } else if (footnote) {
+            // Clear the footnote if the new data doesn't have one, to avoid showing stale text
+            footnote.innerHTML = '';
+          }
         })
         .catch(err => console.error(`Error loading ${config.file}:`, err));
     });
