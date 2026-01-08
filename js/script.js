@@ -99,6 +99,29 @@ document.addEventListener('DOMContentLoaded', () => {
           return response.json();
         })
         .then(data => {
+          // --- BEGIN SORTING LOGIC FOR SLIDE 6 ---
+          if (config.slide === '6' && data.labels && data.datasets && data.datasets[0].data) {
+            // 1. Combine data into an array of objects
+            let combined = data.labels.map((label, index) => {
+              return {
+                label: label,
+                data: data.datasets[0].data[index],
+                backgroundColor: data.datasets[0].backgroundColor[index],
+                borderColor: data.datasets[0].borderColor[index]
+              };
+            });
+
+            // 2. Sort the array of objects by data value (descending)
+            combined.sort((a, b) => b.data - a.data);
+
+            // 3. Deconstruct the sorted array back into the data object
+            data.labels = combined.map(item => item.label);
+            data.datasets[0].data = combined.map(item => item.data);
+            data.datasets[0].backgroundColor = combined.map(item => item.backgroundColor);
+            data.datasets[0].borderColor = combined.map(item => item.borderColor);
+          }
+          // --- END SORTING LOGIC ---
+
           // Load Chart
           const ctx = document.getElementById(config.id).getContext('2d');
           charts[config.id] = new Chart(ctx, {
