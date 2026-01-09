@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabButtons = document.querySelectorAll('.tab-btn');
   const slides = document.querySelectorAll('.slide');
   const quarterButtons = document.querySelectorAll('.quarter-btn');
-  let currentQuarter = 'q2-2026'; // Default quarter
+  
+  // Define available quarters and set the latest as default
+  const QUARTERS = ['q2-2026', 'q3-2026'];
+  let currentQuarter = QUARTERS[QUARTERS.length - 1];
   let charts = {}; // Object to store chart instances
 
   // --- 1. Navigation between Slides (Tabs) ---
@@ -99,8 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
           return response.json();
         })
         .then(data => {
-          // --- BEGIN SORTING LOGIC FOR SLIDE 6 ---
-          if (config.slide === '6' && data.labels && data.datasets && data.datasets[0].data) {
+          // --- BEGIN SORTING LOGIC FOR SLIDES 5 & 6 ---
+          if ((config.slide === '5' || config.slide === '6') &&
+            data.labels &&
+            data.datasets &&
+            data.datasets[0] &&
+            data.datasets[0].data &&
+            data.datasets[0].backgroundColor &&
+            data.datasets[0].borderColor) {
             // 1. Combine data into an array of objects
             let combined = data.labels.map((label, index) => {
               return {
@@ -192,5 +201,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Initial Load ---
+  // Set the active class on the correct button for the initial load
+  quarterButtons.forEach(btn => {
+    if (btn.getAttribute('data-quarter') === currentQuarter) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
   loadQuarterData(currentQuarter);
 });
