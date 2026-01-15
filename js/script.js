@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabButtons = document.querySelectorAll('.tab-btn');
   const slides = document.querySelectorAll('.slide');
   const quarterButtons = document.querySelectorAll('.quarter-btn');
-  let currentQuarter = 'q2-2026'; // Default quarter
+  
+  // Define available quarters and set the latest as default
+  const QUARTERS = ['q2-2026', 'q3-2026'];
+  let currentQuarter = QUARTERS[QUARTERS.length - 1];
   let charts = {}; // Object to store chart instances
 
   // --- 1. Navigation between Slides (Tabs) ---
@@ -99,6 +102,35 @@ document.addEventListener('DOMContentLoaded', () => {
           return response.json();
         })
         .then(data => {
+          // --- BEGIN SORTING LOGIC FOR SLIDES 5 & 6 ---
+          if ((config.slide === '5' || config.slide === '6') &&
+            data.labels &&
+            data.datasets &&
+            data.datasets[0] &&
+            data.datasets[0].data &&
+            data.datasets[0].backgroundColor &&
+            data.datasets[0].borderColor) {
+            // 1. Combine data into an array of objects
+            let combined = data.labels.map((label, index) => {
+              return {
+                label: label,
+                data: data.datasets[0].data[index],
+                backgroundColor: data.datasets[0].backgroundColor[index],
+                borderColor: data.datasets[0].borderColor[index]
+              };
+            });
+
+            // 2. Sort the array of objects by data value (descending)
+            combined.sort((a, b) => b.data - a.data);
+
+            // 3. Deconstruct the sorted array back into the data object
+            data.labels = combined.map(item => item.label);
+            data.datasets[0].data = combined.map(item => item.data);
+            data.datasets[0].backgroundColor = combined.map(item => item.backgroundColor);
+            data.datasets[0].borderColor = combined.map(item => item.borderColor);
+          }
+          // --- END SORTING LOGIC ---
+
           // Load Chart
           const ctx = document.getElementById(config.id).getContext('2d');
           charts[config.id] = new Chart(ctx, {
@@ -133,6 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
               setupModalForGallery();
             }
           }
+
+          // Update footnote text
+          const footnote = document.querySelector(`#slide${config.slide} .footnote`);
+          if (footnote && data.footnote) {
+            footnote.innerHTML = data.footnote;
+          } else if (footnote) {
+            // Clear the footnote if the new data doesn't have one, to avoid showing stale text
+            footnote.innerHTML = '';
+          }
         })
         .catch(err => console.error(`Error loading ${config.file}:`, err));
     });
@@ -160,5 +201,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Initial Load ---
+  // Set the active class on the correct button for the initial load
+  quarterButtons.forEach(btn => {
+    if (btn.getAttribute('data-quarter') === currentQuarter) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
   loadQuarterData(currentQuarter);
 });

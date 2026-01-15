@@ -1,8 +1,8 @@
 {
-  "labels": ["Q2 2025", "Q3 2025", "Q4 2025", "Q1 2026", "Q3 2026"],
+  "labels": ["Q2 2025", "Q3 2025", "Q4 2025", "Q1 2026", "Q2 2026"],
   "datasets": [{
     "label": "Sucursales Capacitadas",
-    "data": [128, 149, 102, 189, 319],
+    "data": [128, 149, 102, 189, 219],
     "backgroundColor": [
       "rgba(75, 192, 192, 0.7)",
       "rgba(54, 162, 235, 0.7)",
@@ -24,5 +24,6 @@
     "assets/images/q2-2026/2.jpg",
     "assets/images/q2-2026/3.jpg",
     "assets/images/q2-2026/4.jpg"
-  ]
+  ],
+  "footnote": "Se incrementó 16% la cantidad de sucursales capacitadas en la comparación trimestral y 71% de forma interanual."
 }

@@ -1,26 +1,26 @@
 {
-  "labels": ["Fravega", "Cetrogar", "OnCity", "Casa del Audio", "La Anonima", "Naldo Lombardi", "Jumbo", "Vea Cencosud", "Red Megatone"],
+  "labels": ["Fravega", "Cetrogar", "OnCity", "Casa del Audio", "La Anonima", "Naldo", "Jumbo", "Vea Cencosud", "Red Megatone"],
   "datasets": [{
     "label": "Vendedores por Retail",
     "data": [203, 190, 176, 35, 34, 13, 8, 2, 1],
     "backgroundColor": [
       "rgba(153, 102, 255, 0.7)",
-      "rgba(54, 162, 235, 0.7)",
+      "rgba(30, 110, 180, 0.7)",
       "rgba(0, 0, 0, 0.7)",
+      "rgba(255, 170, 0, 0.7)",
       "rgba(54, 162, 235, 0.7)",
-      "rgba(54, 162, 235, 0.7)",
-      "rgba(54, 162, 235, 0.7)",
+      "rgba(230, 0, 34, 0.7)",
       "rgba(54, 162, 235, 0.7)",
       "rgba(54, 162, 235, 0.7)",
       "rgba(54, 162, 235, 0.7)"
     ],
     "borderColor": [
       "rgba(153, 102, 255, 1)",
-      "rgba(54, 162, 235, 1)",
+      "rgba(30, 110, 180, 1)",
       "rgba(0, 0, 0, 1)",
+      "rgba(255, 170, 0, 1)",
       "rgba(54, 162, 235, 1)",
-      "rgba(54, 162, 235, 1)",
-      "rgba(54, 162, 235, 1)",
+      "rgba(230, 0, 34, 1)",
       "rgba(54, 162, 235, 1)",
       "rgba(54, 162, 235, 1)",
       "rgba(54, 162, 235, 1)"
@@ -32,5 +32,6 @@
     "assets/images/q2-2026/18.jpg",
     "assets/images/q2-2026/19.jpg",
     "assets/images/q2-2026/20.jpg"
-  ]
+  ],
+  "footnote": "Se destacó el alcance de capacitaciones en sucursales de Fravega, Cetrogar y On City."
 }
