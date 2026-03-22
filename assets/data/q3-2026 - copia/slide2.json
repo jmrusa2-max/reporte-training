@@ -1,0 +1,29 @@
+{
+  "labels": ["Q3 2025", "Q4 2025", "Q1 2026", "Q2 2026", "Q3 2026"],
+  "datasets": [{
+    "label": "Sucursales Capacitadas",
+    "data": [149, 102, 189, 219, 195],
+    "backgroundColor": [
+      "rgba(75, 192, 192, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(75, 192, 192, 0.7)"
+    ],
+    "borderColor": [
+      "rgba(75, 192, 192, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(75, 192, 192, 1)"
+    ],
+    "borderWidth": 2
+  }],
+  "gallery_images": [
+    "assets/images/q3-2026/1.jpg",
+    "assets/images/q3-2026/2.jpg",
+    "assets/images/q3-2026/3.jpg",
+    "assets/images/q3-2026/4.jpg"
+  ],
+  "footnote": "Se incrementó 30% la cantidad de sucursales capacitadas en la comparación interanual."
+}

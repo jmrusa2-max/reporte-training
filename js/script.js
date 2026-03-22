@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const quarterButtons = document.querySelectorAll('.quarter-btn');
   
   // Define available quarters and set the latest as default
-  const QUARTERS = ['q2-2026', 'q3-2026'];
+  const QUARTERS = ['q2-2026', 'q3-2026', 'q4-2026'];
   let currentQuarter = QUARTERS[QUARTERS.length - 1];
   let charts = {}; // Object to store chart instances
 
