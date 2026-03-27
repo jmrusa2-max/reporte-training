@@ -1,8 +1,8 @@
 {
-  "labels": ["oct 2024", "nov 2024", "dic 2024", "ene 2025", "feb 2025", "mar 2025", "abr 2025", "may 2025", "jun 2025", "jul 2025", "ago 2025", "sep 2025", "oct 2025", "nov 2025", "dic 2025"],
+  "labels": ["ene 2025", "feb 2025", "mar 2025", "abr 2025", "may 2025", "jun 2025", "jul 2025", "ago 2025", "sep 2025", "oct 2025", "nov 2025", "dic 2025", "ene 2026", "feb 2026", "mar 2026"],
   "datasets": [{
     "label": "Vendedores por Mes",
-    "data": [122, 201, 157, 128, 54, 147, 176, 267, 309, 224, 212, 226, 166, 147, 174],
+    "data": [128, 54, 147, 176, 267, 309, 224, 212, 226, 166, 147, 174, 166, 170, 169],
     "backgroundColor": "rgba(54, 162, 235, 0.1)",
     "borderColor": "rgba(54, 162, 235, 1)",
     "borderWidth": 2,
@@ -16,5 +16,5 @@
     "assets/images/q4-2026/11.jpg",
     "assets/images/q4-2026/12.jpg"
   ],
-  "footnote": "Diciembre fue el mes con mayor cantidad de vendedores capacitados del trimestre.."
+  "footnote": "Febrero fue el mes con mayor cantidad de vendedores capacitados del trimestre."
 }
