@@ -2,7 +2,7 @@
   "labels": ["LOQ", "Tab Series", "Legion Tab", "Yoga Tab", "Idea Tab series", "Yoga", "Tab M Series", "Ideapad", "Legion", "L Series"],
   "datasets": [{
     "label": "Vendedores por Familia",
-    "data": [222, 18, 4, 16, 50, 74, 37, 21, 26, 15],
+    "data": [19, 24, 77, 103, 84, 14, 0, 135, 61, 6],
     "backgroundColor": [
       "rgba(128, 128, 128, 0.7)",
       "rgba(75, 192, 192, 0.7)",
@@ -35,5 +35,5 @@
     "assets/images/q4-2026/15.jpg",
     "assets/images/q4-2026/16.jpg"
   ],
-  "footnote": "Se destacó el alcance de capacitaciones sobre las notebooks LOQ y YOGA."
+  "footnote": "Se destacó el alcance de capacitaciones sobre las familias IDEAPAD y YOGA TAB."
 }
