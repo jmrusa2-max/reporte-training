@@ -1,0 +1,13 @@
+{
+  "title": "Desarrollos destacados",
+  "items": [
+    {
+      "text": "Impulsamos la 'Ruta Lenovo AMD', acercando nuestras capacitaciones en formato almuerzo a las sucursales más importantes de Cetrogar de todo el país. Compartimos una picada y entregamos merchandising a los asistentes, logrando la mayor cantidad de vendedores capacitados en el año y mejorar la fidelización en cada sucursal.",
+      "image": "assets/images/fy-2026/desarrollo1.jpg"
+    },
+    {
+      "text": "A partir del Q2 2025, se desarrolló una versión web de los reportes de capacitaciones donde se puede acceder a los datos destacados de cada trimestre: <a href='https://reportelenovotraining.netlify.app/' target='_blank'>https://reportelenovotraining.netlify.app/</a>",
+      "image": "assets/images/fy-2026/desarrollo2.jpg"
+    }
+  ]
+}
