@@ -13,6 +13,7 @@
       <button class="quarter-btn" data-quarter="q2-2026">Q2 2026</button>
       <button class="quarter-btn" data-quarter="q3-2026">Q3 2026</button>
       <button class="quarter-btn" data-quarter="q4-2026">Q4 2026</button>
+      <button class="quarter-btn" data-quarter="fy-2026">FY26</button>
     </div>
 
     <div class="main-content">
@@ -25,11 +26,13 @@
         <h1>Lenovo Training PDV Argentina</h1>
         <nav class="tabs">
           <button class="tab-btn active" data-slide="1">Portada</button>
+          <button class="tab-btn tab-fy-only" data-slide="acciones" style="display:none;">Acciones destacadas</button>
           <button class="tab-btn" data-slide="2">Total de sucursales capacitadas</button>
           <button class="tab-btn" data-slide="3">Total de Vendedores Capacitados</button>
-          <button class="tab-btn" data-slide="4">Vendedores capacitados por mes</button>
+          <button class="tab-btn tab-quarter-only" data-slide="4">Vendedores capacitados por mes</button>
           <button class="tab-btn" data-slide="5">Vendedores capacitados por familia</button>
           <button class="tab-btn" data-slide="6">Vendedores capacitados por retail</button>
+          <button class="tab-btn tab-fy-only" data-slide="desarrollos" style="display:none;">Desarrollos destacados</button>
         </nav>
       </header>
 
@@ -45,6 +48,15 @@
             <h3>✨ Destacados del Trimestre</h3>
           </section>
         </section>
+
+        <section id="slideAcciones" class="slide">
+          <h2>Acciones destacadas</h2>
+          <div class="acciones-grid">
+            <!-- Se llena dinámicamente desde JSON -->
+          </div>
+          <p class="footnote"></p>
+        </section>
+
         <section id="slide2" class="slide">
           <h2>Total de sucursales capacitadas</h2>
           <div class="content-grid">
@@ -63,7 +75,7 @@
             </div>
             <div class="chart-section">
               <canvas id="chartSlide3"></canvas>
-              <p class="footnote">Se incrementó 43% la cantidad de vendedores capacitados en la comparación interanual.<br> De forma trimestral se contrajo 12%, haciendo notar el valor agregado de la Ruta Lenovo AMD realizada en el Q1 2026.</p>
+              <p class="footnote"></p>
             </div>
           </div>
         </section>
@@ -100,6 +112,14 @@
             </div>
           </div>
         </section>
+
+        <section id="slideDesarrollos" class="slide">
+          <h2>Desarrollos destacados</h2>
+          <div class="desarrollos-grid">
+            <!-- Se llena dinámicamente desde JSON -->
+          </div>
+        </section>
+
       </main>
     </div> </div> <div id="imageModal" class="modal">
     <span class="close">&times;</span>

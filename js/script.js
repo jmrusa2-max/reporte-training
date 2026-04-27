@@ -4,16 +4,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const quarterButtons = document.querySelectorAll('.quarter-btn');
   
   // Define available quarters and set the latest as default
-  const QUARTERS = ['q2-2026', 'q3-2026', 'q4-2026'];
-  let currentQuarter = QUARTERS[QUARTERS.length - 1];
+  const QUARTERS = ['q2-2026', 'q3-2026', 'q4-2026', 'fy-2026'];
+  let currentQuarter = 'q4-2026'; // Default to last quarterly
   let charts = {}; // Object to store chart instances
+
+  // --- Helper: Check if current quarter is FY ---
+  function isFY(quarter) {
+    return quarter.startsWith('fy-');
+  }
+
+  // --- Toggle FY-only vs Quarter-only tabs ---
+  function updateTabsVisibility(quarter) {
+    const fyTabs = document.querySelectorAll('.tab-fy-only');
+    const quarterTabs = document.querySelectorAll('.tab-quarter-only');
+
+    if (isFY(quarter)) {
+      fyTabs.forEach(tab => tab.style.display = '');
+      quarterTabs.forEach(tab => tab.style.display = 'none');
+    } else {
+      fyTabs.forEach(tab => tab.style.display = 'none');
+      quarterTabs.forEach(tab => tab.style.display = '');
+    }
+  }
 
   // --- 1. Navigation between Slides (Tabs) ---
   function showSlide(slideId) {
     slides.forEach(s => s.classList.remove('active'));
-    document.getElementById(`slide${slideId}`).classList.add('active');
+    // Support both numeric IDs (slide1, slide2...) and named IDs (slideAcciones, slideDesarrollos)
+    const targetSlide = document.getElementById(`slide${slideId}`) || document.getElementById(`slide${slideId.charAt(0).toUpperCase() + slideId.slice(1)}`);
+    if (targetSlide) {
+      targetSlide.classList.add('active');
+    }
     tabButtons.forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`[data-slide="${slideId}"]`).classList.add('active');
+    const targetBtn = document.querySelector(`[data-slide="${slideId}"]`);
+    if (targetBtn) {
+      targetBtn.classList.add('active');
+    }
   }
 
   tabButtons.forEach(button => {
@@ -34,6 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Update active button style
       quarterButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
+
+      // Update tab visibility
+      updateTabsVisibility(currentQuarter);
+
+      // Reset to first slide (Portada)
+      showSlide('1');
 
       // Reload data for the new quarter
       loadQuarterData(currentQuarter);
@@ -76,20 +108,112 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(err => console.error(`Error loading ${file}:`, err));
   }
+
+  // --- Load Acciones Destacadas ---
+  function loadAccionesData(quarter) {
+    const file = `assets/data/${quarter}/slide-acciones.json`;
+    fetch(`${file}?v=${new Date().getTime()}`)
+      .then(response => {
+        if (!response.ok) throw new Error(`Network response was not ok for ${file}`);
+        return response.json();
+      })
+      .then(data => {
+        const grid = document.querySelector('#slideAcciones .acciones-grid');
+        if (grid) {
+          grid.innerHTML = '';
+          if (data.items && Array.isArray(data.items)) {
+            data.items.forEach((item, index) => {
+              const div = document.createElement('div');
+              div.className = 'accion-item';
+
+              const img = document.createElement('img');
+              img.src = item.image;
+              img.alt = item.label || `Acción ${index + 1}`;
+
+              const label = document.createElement('span');
+              label.className = 'accion-label';
+              label.textContent = item.label || '';
+
+              div.appendChild(img);
+              div.appendChild(label);
+              grid.appendChild(div);
+            });
+            setupModalForImages('#slideAcciones .accion-item img');
+          }
+        }
+
+        // Update footnote
+        const footnote = document.querySelector('#slideAcciones .footnote');
+        if (footnote && data.footnote) {
+          footnote.innerHTML = data.footnote;
+        } else if (footnote) {
+          footnote.innerHTML = '';
+        }
+      })
+      .catch(err => console.error(`Error loading ${file}:`, err));
+  }
+
+  // --- Load Desarrollos Destacados ---
+  function loadDesarrollosData(quarter) {
+    const file = `assets/data/${quarter}/slide-desarrollos.json`;
+    fetch(`${file}?v=${new Date().getTime()}`)
+      .then(response => {
+        if (!response.ok) throw new Error(`Network response was not ok for ${file}`);
+        return response.json();
+      })
+      .then(data => {
+        const grid = document.querySelector('#slideDesarrollos .desarrollos-grid');
+        if (grid) {
+          grid.innerHTML = '';
+          if (data.items && Array.isArray(data.items)) {
+            data.items.forEach((item, index) => {
+              const div = document.createElement('div');
+              div.className = 'desarrollo-item';
+
+              const p = document.createElement('p');
+              p.innerHTML = item.text || '';
+
+              const img = document.createElement('img');
+              img.src = item.image;
+              img.alt = `Desarrollo ${index + 1}`;
+
+              div.appendChild(p);
+              div.appendChild(img);
+              grid.appendChild(div);
+            });
+            setupModalForImages('#slideDesarrollos .desarrollo-item img');
+          }
+        }
+      })
+      .catch(err => console.error(`Error loading ${file}:`, err));
+  }
   
   // Main function to load data for all slides
   function loadQuarterData(quarter) {
     // Load cover data
     loadCoverData(quarter);
 
-    // Config for chart/gallery slides
-    const slideConfigs = [
+    // Determine which chart slides to load based on quarter type
+    const slideConfigs = [];
+
+    // Slides 2, 3 are always loaded
+    slideConfigs.push(
       { slide: '2', id: 'chartSlide2', file: `assets/data/${quarter}/slide2.json`, type: 'bar' },
-      { slide: '3', id: 'chartSlide3', file: `assets/data/${quarter}/slide3.json`, type: 'bar' },
-      { slide: '4', id: 'chartSlide4', file: `assets/data/${quarter}/slide4.json`, type: 'line' },
+      { slide: '3', id: 'chartSlide3', file: `assets/data/${quarter}/slide3.json`, type: 'bar' }
+    );
+
+    // Slide 4 (Vendedores por mes) only for quarterly, not FY
+    if (!isFY(quarter)) {
+      slideConfigs.push(
+        { slide: '4', id: 'chartSlide4', file: `assets/data/${quarter}/slide4.json`, type: 'line' }
+      );
+    }
+
+    // Slides 5, 6 are always loaded
+    slideConfigs.push(
       { slide: '5', id: 'chartSlide5', file: `assets/data/${quarter}/slide5.json`, type: 'bar' },
       { slide: '6', id: 'chartSlide6', file: `assets/data/${quarter}/slide6.json`, type: 'bar' }
-    ];
+    );
 
     slideConfigs.forEach(config => {
       if (charts[config.id]) {
@@ -177,15 +301,25 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(err => console.error(`Error loading ${config.file}:`, err));
     });
+
+    // Load FY-specific sections
+    if (isFY(quarter)) {
+      loadAccionesData(quarter);
+      loadDesarrollosData(quarter);
+    }
   }
 
   // --- 4. Image Modal Popup ---
   function setupModalForGallery() {
+    setupModalForImages('.gallery img');
+  }
+
+  function setupModalForImages(selector) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.querySelector('.close');
 
-    document.querySelectorAll('.gallery img').forEach(img => {
+    document.querySelectorAll(selector).forEach(img => {
       const newImg = img.cloneNode(true);
       img.parentNode.replaceChild(newImg, img);
       newImg.addEventListener('click', () => {
@@ -209,5 +343,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.remove('active');
     }
   });
+  updateTabsVisibility(currentQuarter);
   loadQuarterData(currentQuarter);
 });
