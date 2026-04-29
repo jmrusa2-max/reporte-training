@@ -1,12 +1,11 @@
 {
-  "title": "Acciones destacadas",
-  "items": [
-    { "image": "assets/images/fy-2026/accion1.jpg", "label": "AMBA" },
-    { "image": "assets/images/fy-2026/accion2.jpg", "label": "ROSARIO" },
-    { "image": "assets/images/fy-2026/accion3.jpg", "label": "MENDOZA" },
-    { "image": "assets/images/fy-2026/accion4.jpg", "label": "AMBA" },
-    { "image": "assets/images/fy-2026/accion5.jpg", "label": "SALTA" },
-    { "image": "assets/images/fy-2026/accion6.jpg", "label": "CORDOBA" }
+   "items": [
+    { "image": "assets/images/fy-2026/accion1.jpg"},
+    { "image": "assets/images/fy-2026/accion2.jpg" },
+    { "image": "assets/images/fy-2026/accion3.jpg" },
+    { "image": "assets/images/fy-2026/accion4.jpg" },
+    { "image": "assets/images/fy-2026/accion5.jpeg" },
+    { "image": "assets/images/fy-2026/accion6.jpeg" }
   ],
   "footnote": "Se destacó la acción de capacitaciones conjunta con AMD. Nos acercamos a las sucursales más importantes de Cetrogar con una picada y con merchandising para los participantes. De esta forma, conseguimos el registro más alto de vendedores capacitados del año y a la vez nos permitió potenciar la fidelización en las sucursales."
 }
