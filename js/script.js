@@ -87,6 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const cover = document.querySelector('#slide1 .cover');
         if (cover && data.cover_image) {
           cover.style.backgroundImage = `url('${data.cover_image}')`;
+          cover.style.backgroundPosition = '';
+          cover.style.backgroundSize = '';
+          cover.style.backgroundRepeat = '';
+        }
+
+        // Update title text for Destacados
+        const destacadosTitle = document.querySelector('#slide1 .destacados h3');
+        if (destacadosTitle) {
+          destacadosTitle.innerHTML = isFY(quarter) ? '✨ Destacados del Año' : '✨ Destacados del Trimestre';
         }
 
         // Update highlights
@@ -130,12 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
               img.src = item.image;
               img.alt = item.label || `Acción ${index + 1}`;
 
-              const label = document.createElement('span');
-              label.className = 'accion-label';
-              label.textContent = item.label || '';
-
               div.appendChild(img);
-              div.appendChild(label);
+              
+              if (item.label) {
+                const label = document.createElement('span');
+                label.className = 'accion-label';
+                label.textContent = item.label;
+                div.appendChild(label);
+              }
+              
               grid.appendChild(div);
             });
             setupModalForImages('#slideAcciones .accion-item img');
