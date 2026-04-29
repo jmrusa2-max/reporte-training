@@ -2,11 +2,11 @@
   "title": "Desarrollos destacados",
   "items": [
     {
-      "text": "Impulsamos la 'Ruta Lenovo AMD', acercando nuestras capacitaciones en formato almuerzo a las sucursales más importantes de Cetrogar de todo el país. Compartimos una picada y entregamos merchandising a los asistentes, logrando la mayor cantidad de vendedores capacitados en el año y mejorar la fidelización en cada sucursal.",
+      "text": "Para resolver una de las consultas más frecuente de las capacitaciones, lanzamos <a href='https://ampliacionlenovo.vercel.app/' target='_blank'>https://ampliacionlenovo.vercel.app/</a>.<br>En esta herramienta los vendedores de los retails mas importantes pueden consultar facil y rapidamente las capacidades de ampliación de las memorias de cada part number ingresando el SKU de cada retail.",
       "image": "assets/images/fy-2026/desarrollo1.jpg"
     },
     {
-      "text": "A partir del Q2 2025, se desarrolló una versión web de los reportes de capacitaciones donde se puede acceder a los datos destacados de cada trimestre: <a href='https://reportelenovotraining.netlify.app/' target='_blank'>https://reportelenovotraining.netlify.app/</a>",
+      "text": "Presentamos una propuesta para implementar una plataforma de capacitaciones dirigida a vendedores de retail.<br>La solución cuenta con un enfoque innovador que utiliza técnicas de engagement propias de las redes sociales a fin de fomentar la retención orgánica de los usuarios.<br>El estado actual del desarrollo está disponible en esta demo interactiva: <a href='https://app.arcade.software/share/r6Bn54FF6rXh7ig4WBGX' target='_blank'>https://app.arcade.software/share/r6Bn54FF6rXh7ig4WBGX</a>",
       "image": "assets/images/fy-2026/desarrollo2.jpg"
     }
   ]
