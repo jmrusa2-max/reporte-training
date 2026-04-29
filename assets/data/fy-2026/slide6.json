@@ -1,8 +1,8 @@
 {
-  "labels": ["Fravega", "OnCity", "Cetrogar", "Casa del Audio", "La Anonima", "Naldo", "Jumbo", "Vea Cencosud", "Red Megatone", "Carrefour"],
+  "labels": ["Fravega", "OnCity", "Cetrogar", "Casa del Audio", "La Anonima", "Naldo", "Jumbo", "Start", "Red Megatone", "Carrefour"],
   "datasets": [{
     "label": "Vendedores por Retail",
-    "data": [211, 146, 105, 16, 1, 9, 9, 0, 3, 2],
+    "data": [841, 627, 750, 56, 35, 52, 38, 93, 13, 11],
     "backgroundColor": [
       "rgba(153, 102, 255, 0.7)",
       "rgba(0, 0, 0, 0.7)",
@@ -35,5 +35,5 @@
     "assets/images/q4-2026/19.jpg",
     "assets/images/q4-2026/20.jpg"
   ],
-  "footnote": "Se destacó el alto alcance de vendedores capacitados en Frávega y OnCity."
+  "footnote": "Se destacó el alto alcance de vendedores capacitados en Frávega, Cetrogar y OnCity."
 }

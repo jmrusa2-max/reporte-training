@@ -272,12 +272,24 @@ document.addEventListener('DOMContentLoaded', () => {
           charts[config.id] = new Chart(ctx, {
             type: config.type,
             data: { labels: data.labels, datasets: data.datasets },
-            options: { // Chart options from your previous version...
+            plugins: [ChartDataLabels],
+            options: {
               responsive: true, maintainAspectRatio: false, animation: { duration: 0 }, elements: { bar: { borderWidth: 0 } },
               plugins: {
                 legend: { display: false },
                 tooltip: { enabled: true, backgroundColor: 'rgba(255, 255, 255, 0.95)', titleColor: '#003366', bodyColor: '#333', borderColor: '#e0e0e0', borderWidth: 1, cornerRadius: 6, padding: 10, usePointStyle: true },
-                datalabels: { anchor: 'center', align: 'top', color: '#fff', font: { weight: 'bold', size: 12, family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" }, formatter: Math.round, backgroundColor: context => context.dataset.backgroundColor[context.dataIndex], borderRadius: 4, padding: 4, opacity: 0.9 }
+                datalabels: { 
+                  display: config.type === 'bar',
+                  anchor: 'end', 
+                  align: 'bottom', 
+                  offset: 6,
+                  color: '#ffffff', 
+                  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                  borderRadius: 4,
+                  padding: { top: 3, bottom: 3, left: 6, right: 6 },
+                  font: { weight: 'bold', size: 13, family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" }, 
+                  formatter: Math.round
+                }
               },
               scales: {
                 y: { beginAtZero: true, ticks: { precision: 0, font: { size: 12, family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", weight: 'bold' }, color: '#ffffff' }, grid: { color: 'rgba(255, 255, 255, 0.1)', lineWidth: 1 } },

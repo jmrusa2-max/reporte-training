@@ -1,8 +1,8 @@
 {
-  "labels": ["Q4 2025", "Q1 2026", "Q2 2026", "Q3 2026", "Q4 2026"],
+  "labels": ["FY 2025", "FY 2026"],
   "datasets": [{
     "label": "Vendedores Capacitados",
-    "data": [329, 752, 700, 483, 505],
+    "data": [1845, 2549],
     "backgroundColor": [
       "rgba(75, 192, 192, 0.7)",
       "rgba(54, 162, 235, 0.7)",
@@ -25,5 +25,5 @@
     "assets/images/q4-2026/7.jpg",
     "assets/images/q4-2026/8.jpg"
   ],
-  "footnote": "Se incremento 46% la cantidad de vendedores capacitados en la comparación interanual."
+  "footnote": "Se incremento 38% la cantidad de vendedores capacitados en la comparación interanual."
 }
