@@ -245,6 +245,18 @@ h2 {
   backdrop-filter: blur(5px);
 }
 
+.footnote a {
+  color: #8ab4f8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footnote a:hover {
+  text-decoration: underline;
+  color: #a8cbfb;
+}
+
 /* ===== PORTADA ===== */
 .cover {
   position: relative;
@@ -333,7 +345,7 @@ h2 {
 }
 
 .highlight-card p strong {
-  color: var(--secondary);
+  color: #8ab4f8;
   font-weight: 600;
 }
 
@@ -342,7 +354,8 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  margin-bottom: 20px;
+  width: 85%;
+  margin: 0 auto 20px auto;
 }
 
 .accion-item {
