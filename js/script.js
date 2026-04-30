@@ -87,16 +87,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const cover = document.querySelector('#slide1 .cover');
         if (cover && data.cover_image) {
           cover.style.backgroundImage = `url('${data.cover_image}')`;
-          
           if (isFY(quarter)) {
             cover.style.height = 'auto';
             cover.style.aspectRatio = '2/1';
+            cover.style.width = '80%';
+            cover.style.margin = '0 auto';
+            cover.style.backgroundPosition = '';
           } else {
             cover.style.height = '';
             cover.style.aspectRatio = '';
+            cover.style.width = '';
+            cover.style.margin = '';
+            cover.style.backgroundPosition = '';
           }
           
-          cover.style.backgroundPosition = '';
           cover.style.backgroundSize = '';
           cover.style.backgroundRepeat = '';
         }
@@ -136,7 +140,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
       })
       .then(data => {
+        const slide = document.getElementById('slideAcciones');
         const grid = document.querySelector('#slideAcciones .acciones-grid');
+        
+        if (slide && grid) {
+          let titleEl = slide.querySelector('h2.dynamic-title');
+          if (data.title) {
+            if (!titleEl) {
+              titleEl = document.createElement('h2');
+              titleEl.className = 'dynamic-title';
+              slide.insertBefore(titleEl, grid);
+            }
+            titleEl.innerHTML = data.title;
+          } else if (titleEl) {
+            titleEl.remove();
+          }
+        }
+
         if (grid) {
           grid.innerHTML = '';
           if (data.items && Array.isArray(data.items)) {
