@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Define available quarters and set the latest as default
   const QUARTERS = ['q2-2026', 'q3-2026', 'q4-2026', 'fy-2026'];
-  let currentQuarter = 'q4-2026'; // Default to last quarterly
+  let currentQuarter = 'fy-2026'; // Default to last quarterly
   let charts = {}; // Object to store chart instances
 
   // --- Helper: Check if current quarter is FY ---
@@ -87,6 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const cover = document.querySelector('#slide1 .cover');
         if (cover && data.cover_image) {
           cover.style.backgroundImage = `url('${data.cover_image}')`;
+          
+          if (isFY(quarter)) {
+            cover.style.height = 'auto';
+            cover.style.aspectRatio = '2/1';
+          } else {
+            cover.style.height = '';
+            cover.style.aspectRatio = '';
+          }
+          
           cover.style.backgroundPosition = '';
           cover.style.backgroundSize = '';
           cover.style.backgroundRepeat = '';
@@ -182,15 +191,18 @@ document.addEventListener('DOMContentLoaded', () => {
               const div = document.createElement('div');
               div.className = 'desarrollo-item';
 
-              const p = document.createElement('p');
-              p.innerHTML = item.text || '';
-
               const img = document.createElement('img');
               img.src = item.image;
               img.alt = `Desarrollo ${index + 1}`;
 
-              div.appendChild(p);
+              const p = document.createElement('p');
+              p.className = 'footnote';
+              p.style.marginTop = '20px';
+              p.style.marginBottom = '0';
+              p.innerHTML = item.text || '';
+
               div.appendChild(img);
+              div.appendChild(p);
               grid.appendChild(div);
             });
             setupModalForImages('#slideDesarrollos .desarrollo-item img');
