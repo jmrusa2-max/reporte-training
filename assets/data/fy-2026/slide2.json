@@ -1,0 +1,29 @@
+{
+  "labels": ["FY 2025", "FY 2026"],
+  "datasets": [{
+    "label": "Sucursales Capacitadas",
+    "data": [552, 848],
+    "backgroundColor": [
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(75, 192, 192, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(75, 192, 192, 0.7)"
+    ],
+    "borderColor": [
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(75, 192, 192, 0.7)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(75, 192, 192, 1)"
+    ],
+    "borderWidth": 2
+  }],
+  "gallery_images": [
+    "assets/images/fy-2026/1.jpg",
+    "assets/images/fy-2026/2.jpg",
+    "assets/images/fy-2026/3.jpg",
+    "assets/images/fy-2026/4.jpg"
+  ],
+  "footnote": "Se incrementó 53% la cantidad de sucursales capacitadas en la comparación interanual. <br>La ampliación de las micro capacitaciones al equipo de merchandiser de AMBA nos permitio multiplicar el alcance en la cobertura, al mismo tiempo que ampliamos y enriquecimos las funciones del equipo."
+}

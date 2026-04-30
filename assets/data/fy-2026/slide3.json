@@ -1,0 +1,29 @@
+{
+  "labels": ["FY 2025", "FY 2026"],
+  "datasets": [{
+    "label": "Vendedores Capacitados",
+    "data": [1845, 2549],
+    "backgroundColor": [
+      "rgba(75, 192, 192, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(54, 162, 235, 0.7)",
+      "rgba(75, 192, 192, 0.7)"
+    ],
+    "borderColor": [
+      "rgba(75, 192, 192, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(54, 162, 235, 1)",
+      "rgba(75, 192, 192, 1)"
+    ],
+    "borderWidth": 2
+  }],
+  "gallery_images": [
+    "assets/images/fy-2026/5.jpg",
+    "assets/images/fy-2026/6.jpg",
+    "assets/images/fy-2026/7.jpg",
+    "assets/images/fy-2026/8.jpg"
+  ],
+  "footnote": "Se incremento 38% la cantidad de vendedores capacitados en la comparación interanual."
+}

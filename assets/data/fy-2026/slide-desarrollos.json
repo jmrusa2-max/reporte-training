@@ -1,0 +1,13 @@
+{
+  "title": "Desarrollos destacados",
+  "items": [
+    {
+      "text": "Para resolver una de las dudas mas frecuentes de las capacitaciones, lanzamos <a href='https://ampliacionlenovo.vercel.app/' target='_blank'>Ampliación Lenovo</a>. <br> Con esta herramienta, los vendedores pueden responderle a los clientes las capacidades de expansión de las memorias según cada part number usando el SKU de su propio retail",
+      "image": "assets/images/fy-2026/desarrollo1.jpg"
+    },
+    {
+      "text": "Para potenciar la retención de los contenidos de capacitación, presentamos la <b>Portal de Vendedores Lenovo</b>.<br><br>Con esta propuesta, los vendedores de retail acceden a contenidos de capacitación mediante un enfoque de red social, utilizando técnicas de engagement para asegurar un aprendizaje orgánico y dinámico.<br>Demo interactiva del desarrollo (fase beta): <a href='https://app.arcade.software/share/r6Bn54FF6rXh7ig4WBGX' target='_blank'>Portal de Vendedores Lenovo</a>",
+      "image": "assets/images/fy-2026/desarrollo2.jpg"
+    }
+  ]
+}
