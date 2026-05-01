@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 legend: { display: false },
                 tooltip: { enabled: true, backgroundColor: 'rgba(255, 255, 255, 0.95)', titleColor: '#003366', bodyColor: '#333', borderColor: '#e0e0e0', borderWidth: 1, cornerRadius: 6, padding: 10, usePointStyle: true },
                 datalabels: { 
-                  display: config.type === 'bar',
+                  display: false, // Cambiar a "config.type === 'bar'" para restaurar las etiquetas
                   anchor: 'end', 
                   align: 'bottom', 
                   offset: 6,
