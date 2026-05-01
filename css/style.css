@@ -450,12 +450,22 @@ h2 {
   width: 100%;
   flex: 1;
   object-fit: cover;
+  object-position: top;
+  max-height: 380px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
   min-height: 0;
+}
+
+/* Formato específico para capturas verticales (como la del celular en la segunda tarjeta) */
+.desarrollo-item:nth-child(2) img {
+  object-fit: contain;
+  object-position: center;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .desarrollo-item img:hover {
