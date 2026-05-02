@@ -19,7 +19,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #120a1f 0%, #2d0b4a 50%, #1a0633 100%);
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../assets/images/fy-2026/fondo2.jpg') center/cover fixed;
   color: var(--text-light);
   line-height: 1.6;
   min-height: 100vh;
@@ -66,7 +66,7 @@ header h1 {
   font-size: 2.2rem;
   margin-bottom: 10px;
   color: var(--text-light);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 2px 5px rgba(0, 0, 0, 0.5);
   letter-spacing: 1px;
 }
 
@@ -86,13 +86,14 @@ header h1 {
 .quarter-btn {
   width: 100%;
   padding: 10px 20px;
-  background: linear-gradient(135deg, #007acc 0%, #003366 100%);
+  background: rgba(15, 5, 25, 0.5);
   color: white;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(0, 122, 204, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -100,14 +101,19 @@ header h1 {
 
 .quarter-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(0, 122, 204, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .quarter-btn.active {
   /* You can add a specific style for the active quarter button if you want */
   /* For example, a slightly different background or a border */
-  box-shadow: 0 0 25px rgba(0, 150, 255, 0.9);
-  border: 1px solid rgba(0, 150, 255, 0.8);
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #120a1f;
+  font-weight: 800;
 }
 
 /* Tabs de métricas */
@@ -119,11 +125,11 @@ header h1 {
   /* Quitado: justify-content, flex-wrap */
   gap: 8px;
   margin-bottom: 20px;
-  background: rgba(30, 20, 43, 0.7);
+  background: rgba(15, 5, 25, 0.65);
   padding: 10px;
   border-radius: 12px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .tab-btn {
@@ -146,22 +152,22 @@ header h1 {
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, #007acc 0%, #003366 100%);
+  background: rgba(255, 255, 255, 0.25);
   color: white;
-  box-shadow: 0 0 15px rgba(0, 122, 204, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 /* ===== SLIDES ===== */
 .slide {
   display: none;
   padding: 20px;
-  background: rgba(30, 20, 43, 0.7);
+  background: rgba(15, 5, 25, 0.65);
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .slide.active {
@@ -229,7 +235,7 @@ h2 {
   padding: 15px;
   width: 100% !important;
   height: 300px !important;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
 }
 
 .footnote {
@@ -246,7 +252,7 @@ h2 {
   border-right: 1px solid rgba(255, 255, 255, 0.02);
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(15px);
 }
 
 .footnote a,
@@ -313,10 +319,11 @@ h2 {
 .destacados {
   margin-top: 40px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(15, 5, 25, 0.4);
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .destacados h3 {
@@ -337,7 +344,7 @@ h2 {
   border-right: 1px solid rgba(255, 255, 255, 0.02);
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(15px);
   transition: transform 0.3s ease;
 }
 
@@ -416,7 +423,7 @@ h2 {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 20px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
