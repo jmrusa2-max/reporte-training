@@ -19,7 +19,7 @@
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../assets/images/fy-2026/fondo2.jpg') center/cover fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/images/fy-2026/fondo1.jpg') center/cover fixed;
   color: var(--text-light);
   line-height: 1.6;
   min-height: 100vh;
@@ -125,7 +125,7 @@ header h1 {
   /* Quitado: justify-content, flex-wrap */
   gap: 8px;
   margin-bottom: 20px;
-  background: rgba(15, 5, 25, 0.65);
+  background: rgba(15, 5, 25, 0.45);
   padding: 10px;
   border-radius: 12px;
   backdrop-filter: blur(20px);
@@ -162,7 +162,7 @@ header h1 {
 .slide {
   display: none;
   padding: 20px;
-  background: rgba(15, 5, 25, 0.65);
+  background: rgba(15, 5, 25, 0.45);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
