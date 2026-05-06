@@ -16,10 +16,11 @@
   --text-muted: #cccccc;
   --border: #332244;
   --shadow: rgba(0, 0, 0, 0.5);
+  --bg-overlay: rgba(0, 0, 0, 0.27); /* Cambia el último número (0.15) para ajustar la oscuridad/luminosidad. 0 es sin oscuridad, 1 es negro total. */
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/images/fy-2026/fondo2.jpg') center/cover fixed;
+  background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('../assets/images/fy-2026/fondo2.jpg') center/cover fixed;
   color: var(--text-light);
   line-height: 1.6;
   min-height: 100vh;
